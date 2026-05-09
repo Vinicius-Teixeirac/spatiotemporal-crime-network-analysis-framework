@@ -173,8 +173,8 @@ The framework accepts any tabular event dataset with at minimum:
 
 ### SSP-SP dataset (thesis application)
 
-The pre-processed dataset is provided as Parquet files tracked via **Git LFS**
-(see `.gitattributes`). After cloning, run `git lfs pull` to download them:
+Two Parquet files are tracked via **Git LFS** (see `.gitattributes`).
+After cloning, run `git lfs pull` to download them:
 
 | File | Description | Size |
 |---|---|---|
@@ -187,10 +187,9 @@ place the file at `dados/VeiculosSubtraidos_2024.xlsx`, and update
 `DataConfig.raw_data_path` to point to it. The loader detects the format by extension.
 
 > **Monte Carlo note:** `event_sync/analyzer.py::compute_significance` is
-> computationally expensive (hours per 1 000 surrogates on a single machine for
-> ~1 300 cells). The pre-computed result used in the thesis (`monteCarlosimulations.npy`)
-> was produced on an HPC cluster. To skip this stage, place the `.npy` file at
-> `config.DataConfig.monte_carlo_path`.
+> computationally expensive — hours per 1 000 surrogates on a single machine for
+> ~1 300 cells. No pre-computed result is provided; the stage must be run to
+> reproduce the network. An HPC cluster is strongly recommended.
 
 ---
 
@@ -207,8 +206,8 @@ The exact parameter set used in the thesis is already the default in `config.py`
 | `significance_level` | `0.95` | 95% confidence threshold |
 | Date range | 2022-01-01 → 2023-12-31 | |
 
-Running `uv run python scripts/run_pipeline.py` with the SSP-SP data and the
-pre-computed `monteCarlosimulations.npy` reproduces all reported metrics.
+Running `uv run python scripts/run_pipeline.py` with the SSP-SP data reproduces
+all reported metrics, provided the Monte Carlo stage is also run to completion.
 
 ### Key numbers
 
