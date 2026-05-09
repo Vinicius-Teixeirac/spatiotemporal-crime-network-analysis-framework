@@ -29,9 +29,8 @@ dados/
 *.pkl
 hourly_filtered_time_series_df
 eventsync17000/
-# Monte Carlo result tracked via LFS; other .npy files excluded
+# Intermediate outputs — not tracked
 *.npy
-!monteCarlosimulations.npy
 
 # Outputs
 outputs/
