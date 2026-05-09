@@ -1,0 +1,52 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+.venv/
+venv/
+env/
+
+# uv
+.uv/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+ResultadosEventSync.ipynb
+/códigos
+notebooks/.ipynb_checkpoints/
+
+# data/ — Parquet files are tracked via Git LFS (see .gitattributes)
+# dados/ — local-only raw sources, never tracked
+dados/
+# Intermediate binary outputs
+*.pkl
+hourly_filtered_time_series_df
+eventsync17000/
+# Monte Carlo result tracked via LFS; other .npy files excluded
+*.npy
+!monteCarlosimulations.npy
+
+# Outputs
+outputs/
+*.html
+*.csv
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+
+# Secrets / env
+.env
+*.pem
