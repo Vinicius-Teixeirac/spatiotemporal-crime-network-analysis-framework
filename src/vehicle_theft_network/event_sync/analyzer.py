@@ -17,7 +17,7 @@ def compute_significance(
     synchronization between cells i and j. Intended to be run on a cluster
     due to the high computational cost.
     """
-    n_cells = ev.event_matrix.shape[1]
+    n_cells = ev.get_event_matrix().shape[1]
     counts = np.zeros((n_cells, n_cells), dtype=np.int16)
     for _ in range(n_surr):
         result = ev.event_analysis_significance(
