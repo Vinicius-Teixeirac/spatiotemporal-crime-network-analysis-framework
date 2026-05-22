@@ -43,6 +43,6 @@ def load_npy(path: Path) -> np.ndarray:
     return np.load(path)
 
 
-def save_npy(arr: np.ndarray, path: Path) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
+def save_npy(arr: np.ndarray, path) -> None:
+    Path(path).parent.mkdir(parents=True, exist_ok=True)
     np.save(path, arr)

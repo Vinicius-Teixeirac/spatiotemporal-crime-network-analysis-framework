@@ -18,7 +18,8 @@ def build_time_series(
 
     data: Dict[Any, Any] = {"date": date_range}
     for coords, info in cell_data_dict.items():
-        valid = pd.Series([dt for dt in info["DATA"] if pd.notna(dt)])
+        raw = [dt for dt in info["DATA"] if pd.notna(dt)]
+        valid = pd.to_datetime(pd.Series(raw, dtype="object"))
         counts = valid.dt.floor(freq).value_counts().reindex(date_range, fill_value=0)
         data[coords] = counts.values
 
