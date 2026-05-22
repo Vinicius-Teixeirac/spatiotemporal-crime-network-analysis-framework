@@ -1,8 +1,8 @@
 # Vehicle Theft Network
 ### A Spatiotemporal Complex-Network Framework for Crime Analysis
 
-> Developed as part of an undergraduate thesis (Trabalho de Conclusão de Curso) — Bachelor in Applied Mathematics and Scientific Computing  
-> Instituto de Ciências Matemáticas e de Computação — ICMC/USP, São Carlos, 2023  
+> Developed as part of an undergraduate thesis (Trabalho de Conclusão de Curso), Bachelor in Applied Mathematics and Scientific Computing  
+> Instituto de Ciências Matemáticas e de Computação, ICMC/USP, São Carlos, 2023  
 > **Author:** Vinícius Teixeira de Carvalho Freitas  
 > **Advisor:** Prof. Dr. Luis Gustavo Nonato  
 > **Co-advisor:** Prof. Dr. Thomas Kauê Dal'Maso Peron
@@ -27,16 +27,19 @@ The framework was applied to vehicle theft records from the state of São Paulo,
 
 ## Stack
 
-| Layer | Libraries |
-|---|---|
-| Data wrangling | `pandas` · `numpy` · `unidecode` |
-| Geospatial | `geopandas` · `shapely` |
-| Network analysis | `networkx` |
-| Event Synchronization | `pyunicorn` |
-| Statistics | `scipy` |
-| Visualisation | `folium` · `plotly` |
-| Data format | Apache Parquet via `pyarrow` |
-| Package management | `uv` · `hatchling` |
+![Python](https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-2.0+-013243?logo=numpy&logoColor=white)
+![pandas](https://img.shields.io/badge/pandas-2.0+-150458?logo=pandas&logoColor=white)
+![GeoPandas](https://img.shields.io/badge/GeoPandas-0.14+-139C5A)
+![Shapely](https://img.shields.io/badge/Shapely-2.0+-1B6AC6)
+![NetworkX](https://img.shields.io/badge/NetworkX-3.2+-E07B39)
+![pyunicorn](https://img.shields.io/badge/pyunicorn-0.8+-6A4C93)
+![SciPy](https://img.shields.io/badge/SciPy-1.11+-8CAAE6?logo=scipy&logoColor=white)
+![Folium](https://img.shields.io/badge/Folium-0.15+-77B829)
+![Plotly](https://img.shields.io/badge/Plotly-5.18+-3F4F75?logo=plotly&logoColor=white)
+![PyArrow](https://img.shields.io/badge/PyArrow-24.0+-E8404A)
+![uv](https://img.shields.io/badge/uv-package_manager-8A2BE2)
+![License](https://img.shields.io/badge/license-MIT-22bb55)
 
 ---
 
@@ -62,7 +65,7 @@ Raw event data (Excel / Parquet / CSV)
         │
         ▼
 4. Event Synchronization + Monte Carlo significance test
-   [CPU-intensive — designed to run on an HPC cluster]
+   [CPU-intensive, designed to run on an HPC cluster]
         │
         ▼
 5. Adjacency matrix  (threshold: > n_surr * significance_level surrogates)
@@ -109,7 +112,7 @@ Raw event data (Excel / Parquet / CSV)
 │   ├── run_pipeline.py          # CLI orchestrator (all stages)
 │   └── test_pipeline.py         # smoke test with synthetic data
 ├── data/                        # Parquet datasets tracked via Git LFS
-├── dados/                       # local-only raw files (Excel, CSV — gitignored)
+├── dados/                       # local-only raw files (Excel, CSV, gitignored)
 ├── pyproject.toml
 ├── .gitignore
 └── README.md
@@ -202,7 +205,7 @@ place the file at `dados/VeiculosSubtraidos_2024.xlsx`, and update
 `DataConfig.raw_data_path` to point to it. The loader detects the format by extension.
 
 > **Monte Carlo note:** `event_sync/analyzer.py::compute_significance` is
-> computationally expensive — hours per 1 000 surrogates on a single machine for
+> computationally expensive; hours per 1 000 surrogates on a single machine for
 > ~1 300 cells. No pre-computed result is provided; the stage must be run to
 > reproduce the network. An HPC cluster is strongly recommended.
 
@@ -219,7 +222,7 @@ The exact parameter set used in the thesis is already the default in `config.py`
 | `taumax` | `5` | ES lag window (hours) |
 | `n_surr` | `1 000` | Monte Carlo surrogates |
 | `significance_level` | `0.95` | 95% confidence threshold |
-| Date range | 2022-01-01 → 2023-12-31 | |
+| Date range | 2022-01-01 to 2023-12-31 | |
 
 Running `uv run python scripts/run_pipeline.py` with the SSP-SP data reproduces
 all reported metrics, provided the Monte Carlo stage is also run to completion.

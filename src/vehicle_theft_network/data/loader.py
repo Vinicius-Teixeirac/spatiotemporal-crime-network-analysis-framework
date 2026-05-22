@@ -1,6 +1,6 @@
 import pickle
 from pathlib import Path
-from typing import Any, Sequence
+from typing import Any, Sequence, Union
 
 import numpy as np
 import pandas as pd
@@ -29,20 +29,24 @@ def load_processed(path: Path) -> pd.DataFrame:
 
 
 def load_pickle(path: Path) -> Any:
+    """Deserialize an object from a pickle file."""
     with open(path, "rb") as f:
         return pickle.load(f)
 
 
 def save_pickle(obj: Any, path: Path) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
+    """Serialize ``obj`` to a pickle file, creating parent directories as needed."""
+    Path(path).parent.mkdir(parents=True, exist_ok=True)
     with open(path, "wb") as f:
         pickle.dump(obj, f)
 
 
-def load_npy(path: Path) -> np.ndarray:
+def load_npy(path: Union[Path, str]) -> np.ndarray:
+    """Load a NumPy array from a ``.npy`` file."""
     return np.load(path)
 
 
-def save_npy(arr: np.ndarray, path) -> None:
+def save_npy(arr: np.ndarray, path: Union[Path, str]) -> None:
+    """Save a NumPy array to a ``.npy`` file, creating parent directories as needed."""
     Path(path).parent.mkdir(parents=True, exist_ok=True)
     np.save(path, arr)

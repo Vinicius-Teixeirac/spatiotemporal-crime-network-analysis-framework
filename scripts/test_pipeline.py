@@ -35,12 +35,12 @@ from vehicle_theft_network.timeseries.builder import (
 )
 
 # ---------------------------------------------------------------------------
-# Test configuration — smaller values so the full pipeline finishes fast
+# Test configuration: smaller values so the full pipeline finishes fast
 # ---------------------------------------------------------------------------
-GRID_SIZE = 0.05    # ~5 km cells → ~20 cells from 500 São-Paulo-area points
+GRID_SIZE = 0.05    # ~5 km cells -> ~20 cells from 500 Sao-Paulo-area points
 MIN_EVENTS = 2      # low bar so cells survive the time-series filter
 N_SURR = 5          # tiny Monte Carlo (or skipped when pyunicorn absent)
-SIG_LEVEL = 0.5     # 50 % threshold → denser test graph
+SIG_LEVEL = 0.5     # 50 % threshold -> denser test graph
 N_RECORDS = 500
 
 LAT_MIN, LAT_MAX = -23.65, -23.45
@@ -114,7 +114,7 @@ def build_adjacency(event_array: np.ndarray, n_cells: int) -> np.ndarray:
         counts = compute_significance(ev, n_surr=N_SURR, symmetrization="symmetric")
         return build_adjacency_matrix(counts, n_surr=N_SURR, significance_level=SIG_LEVEL)
     except ImportError:
-        print("    [pyunicorn not installed — using random adjacency matrix as fallback]")
+        print("    [pyunicorn not installed; using random adjacency matrix as fallback]")
         return _random_adjacency(n_cells)
 
 
