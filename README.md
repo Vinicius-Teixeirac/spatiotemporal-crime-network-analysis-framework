@@ -26,20 +26,19 @@ The framework was applied to vehicle theft records from the state of São Paulo,
 ---
 
 ## Stack
-
-![Python](https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white)
-![NumPy](https://img.shields.io/badge/NumPy-2.0+-013243?logo=numpy&logoColor=white)
-![pandas](https://img.shields.io/badge/pandas-2.0+-150458?logo=pandas&logoColor=white)
-![GeoPandas](https://img.shields.io/badge/GeoPandas-0.14+-139C5A)
-![Shapely](https://img.shields.io/badge/Shapely-2.0+-1B6AC6)
-![NetworkX](https://img.shields.io/badge/NetworkX-3.2+-E07B39)
-![pyunicorn](https://img.shields.io/badge/pyunicorn-0.8+-6A4C93)
-![SciPy](https://img.shields.io/badge/SciPy-1.11+-8CAAE6?logo=scipy&logoColor=white)
-![Folium](https://img.shields.io/badge/Folium-0.15+-77B829)
-![Plotly](https://img.shields.io/badge/Plotly-5.18+-3F4F75?logo=plotly&logoColor=white)
-![PyArrow](https://img.shields.io/badge/PyArrow-24.0+-E8404A)
-![uv](https://img.shields.io/badge/uv-package_manager-8A2BE2)
-![License](https://img.shields.io/badge/license-MIT-22bb55)
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![NumPy](https://img.shields.io/badge/NumPy-2.0+-013243?style=for-the-badge&logo=numpy&logoColor=white)](https://numpy.org/)
+[![pandas](https://img.shields.io/badge/pandas-2.0+-150458?style=for-the-badge&logo=pandas&logoColor=white)](https://pandas.pydata.org/)
+[![GeoPandas](https://img.shields.io/badge/GeoPandas-0.14+-139C5A?style=for-the-badge)](https://geopandas.org/)
+[![Shapely](https://img.shields.io/badge/Shapely-2.0+-1B6AC6?style=for-the-badge)](https://shapely.readthedocs.io/)
+[![NetworkX](https://img.shields.io/badge/NetworkX-3.2+-E07B39?style=for-the-badge)](https://networkx.org/)
+[![pyunicorn](https://img.shields.io/badge/pyunicorn-0.8+-6A4C93?style=for-the-badge)](https://www.pik-potsdam.de/~donges/pyunicorn/)
+[![SciPy](https://img.shields.io/badge/SciPy-1.11+-8CAAE6?style=for-the-badge&logo=scipy&logoColor=white)](https://scipy.org/)
+[![Folium](https://img.shields.io/badge/Folium-0.15+-77B829?style=for-the-badge)](https://python-visualization.github.io/folium/)
+[![Plotly](https://img.shields.io/badge/Plotly-5.18+-3F4F75?style=for-the-badge&logo=plotly&logoColor=white)](https://plotly.com/python/)
+[![PyArrow](https://img.shields.io/badge/PyArrow-24.0+-E8404A?style=for-the-badge)](https://arrow.apache.org/docs/python/)
+[![uv](https://img.shields.io/badge/uv-package_manager-8A2BE2?style=for-the-badge)](https://github.com/astral-sh/uv)
+[![License](https://img.shields.io/badge/license-MIT-22bb55?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
 ---
 
